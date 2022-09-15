@@ -18,7 +18,7 @@ ln -s /var/cache/apk /etc/apk/cache
 apk update
 
 #install some packages we need for UserLAnd
-apk add bash sudo dropbear mesa-gl xvfb x11vnc xsetroot xterm twm expect shadow wget curl
+apk add bash sudo dropbear mesa-gl xvfb x11vnc xsetroot xterm twm expect shadow wget curl xz
 
 #clean up after ourselves
 apk cache clean
@@ -36,7 +36,6 @@ apk add alpine-sdk
 gcc -shared -fpic /input/disableselinux.c -o /output/libdisableselinux.so
 
 #grab a static version of busybox that we can use to set things up later
-apk add xz
 apk add busybox-static
 cp /bin/busybox.static output/busybox
-cp /bin/xz output/xz
+cp /usr/bin/xz output/xz
