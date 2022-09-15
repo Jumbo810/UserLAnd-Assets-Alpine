@@ -36,5 +36,7 @@ apk add alpine-sdk
 gcc -shared -fpic /input/disableselinux.c -o /output/libdisableselinux.so
 
 #grab a static version of busybox that we can use to set things up later
+apk add xz
 apk add busybox-static
 cp /bin/busybox.static output/busybox
+cp /bin/xz output/xz
